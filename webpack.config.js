@@ -6,9 +6,9 @@ module.exports = {
     path: `${__dirname}/dist`,
     filename: "[name].js",
   },
-  mode: "production",
+  mode: "development",
   resolve: {
-    extentions: [".ts", ".js"],
+    extensions: [".ts", ".js"],
   },
   devServer: {
     static: {

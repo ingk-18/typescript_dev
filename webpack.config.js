@@ -1,5 +1,3 @@
-const { dirname } = require("path");
-
 module.exports = {
   entry: {
     bundle: "./src/index.ts",
@@ -8,7 +6,7 @@ module.exports = {
     path: `${__dirname}/dist`,
     filename: "[name].js",
   },
-  mode: "development",
+  mode: "production",
   resolve: {
     extentions: [".ts", ".js"],
   },
@@ -19,9 +17,12 @@ module.exports = {
     open: true,
   },
   module: {
-    rules: {
-      test: /\.ts$/,
-      loader: "ts-loader",
-    },
+    rules: [
+      {
+        test: /\.ts$/,
+        loader: "ts-loader",
+      },
+    ],
   },
+  performance: { hints: false },
 };
